@@ -23,9 +23,8 @@
       .then(files => {
         console.log('Dosyalar:', files);
         const container = document.getElementById('models-container');
-        files
-          .filter(f => f.name.endsWith('.glb'))
-          .forEach(file => {
+        files.filter(f => f.name.endsWith('.glb') || f.name.endsWith('.gltf')) 
+		  forEach(file => {
             const title = document.createElement('h3');
             title.textContent = file.name.replace('.glb', '');
             container.appendChild(title);
