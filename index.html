@@ -26,19 +26,19 @@
         const container = document.getElementById('models-container');
         
         files
-  .filter(f => f.name.endsWith('.glb') || f.name.endsWith('.gltf'))
-  .forEach(file => {
-    const title = document.createElement('h3');
-    title.textContent = file.name.replace('.glb', '').replace('.gltf', '');
-    container.appendChild(title);
-
-    const viewer = document.createElement('model-viewer');
-    viewer.src = file.download_url;
-    viewer.setAttribute('camera-controls', '');
-    viewer.setAttribute('auto-rotate', '');
-    viewer.setAttribute('alt', file.name);
-    container.appendChild(viewer);
-  });
+          .filter(f => f.name.endsWith('.glb') || f.name.endsWith('.gltf'))
+          .forEach(file => {
+            const title = document.createElement('h3');
+            title.textContent = file.name.replace('.glb', '').replace('.gltf', '');
+            container.appendChild(title);
+            
+            const viewer = document.createElement('model-viewer');
+            viewer.src = file.download_url;
+            viewer.setAttribute('camera-controls', '');
+            viewer.setAttribute('auto-rotate', '');
+            viewer.setAttribute('alt', file.name);
+            container.appendChild(viewer);
+          });
       })
       .catch(err => console.error('Hata:', err));
   </script>
